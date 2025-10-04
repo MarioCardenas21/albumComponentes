@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Álbum de Componentes de PC (Ilustrativo)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="title">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M4 6h16v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6z" stroke="#86efac" stroke-width="1.5"/>
+          <path d="M2 6h20" stroke="#6aa4ff" stroke-width="1.5"/>
+          <rect x="7" y="3" width="10" height="3" rx="1" fill="#6aa4ff"/>
+        </svg>
+        <h1>Álbum de Componentes de PC</h1>
+        <span class="chip">Ilustrativo • Sin precios</span>
+      </div>
+      <div class="toolbar">
+        <input id="q" class="input" placeholder="Buscar (nombre, marca, modelo, categoría)..." />
+        <select id="cat">
+          <option value="">Todas las categorías</option>
+        </select>
+        <button id="sort" class="btn">Ordenar: Nombre A→Z</button>
+        <button id="addDemo" class="btn btn-add" title="Volver a cargar datos de ejemplo">Recargar demo</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div id="grid" class="grid"></div>
+  </main>
+
+  <footer>
+    💡 Agrega tus imágenes en la carpeta <b>img/</b> y edita el arreglo <b>DEMO</b> en <code>app.js</code>.
+  </footer>
+
+  <!-- Modal Detalle -->
+  <dialog id="modal">
+    <button class="close" onclick="document.getElementById('modal').close()">✕</button>
+    <div class="modal">
+      <div class="thumb">
+        <img id="mImg" alt="Imagen componente" />
+      </div>
+      <div class="body">
+        <h2 id="mName" style="margin:.2rem 0 .4rem 0"></h2>
+        <div class="meta" id="mMeta"></div>
+        <p id="mDesc" style="color:var(--muted);margin:.8rem 0 0 0"></p>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
